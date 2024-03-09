@@ -10,6 +10,7 @@ import Players from './pages/players/Players';
 import Sports from './pages/sports/Sports';
 import Doc from './pages/documentation/Doc';
 import About from './pages/abouts/About';
+import Profile from './pages/profile/Profile';
 
 function App() {
   return (
@@ -23,6 +24,7 @@ function App() {
             <Route path='/Sports' element={<Sports />}/>
             <Route path='/documentation' element={<Doc />}/>
             <Route path='/about' element={<About />}/>
+            <Route path='/profile' element={<Profile />}/>
           </Route>
           <Route path='/login' element={<Login />}/>
           <Route path='/sign-up' element={<Register />}/>
