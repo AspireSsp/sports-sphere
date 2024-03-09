@@ -8,16 +8,24 @@ import Footer from './Footer';
 
 const Links = [
     {
-        key: 'Editer',
-        value : 'code'
+        key: 'Teams',
+        value : 'teams'
+    },
+    {
+        key: 'Players',
+        value : 'players'
+    },
+    {
+        key: 'Sports',
+        value : 'Sports'
     },
     {
         key: 'About',
         value : 'about'
     },
     {
-        key: 'Contribute',
-        value : 'contribute'
+        key: 'documentation',
+        value : 'documentation'
     },
 ]
 
