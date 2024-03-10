@@ -111,7 +111,9 @@ const Navbar = () => {
                                         />
                                     </MenuButton>
                                     <MenuList>
+                                    <Link to='/profile'>
                                         <MenuItem>Profile</MenuItem>
+                                    </Link>
                                         <MenuItem>Settings</MenuItem>
                                         <MenuDivider />
                                         <MenuItem onClick={handleLogout}>LogOut</MenuItem>
