@@ -13,12 +13,18 @@
     "@testing-library/user-event": "^13.5.0",
     "axios": "^1.6.7",
     "framer-motion": "^11.0.8",
+    "leaflet": "^1.9.4",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-icons": "^5.0.1",
+<<<<<<< HEAD
+=======
+    "react-leaflet": "^4.2.1",
+>>>>>>> 9ff831906a538030495d5252847c0b320f3600f5
     "react-redux": "^9.1.0",
     "react-router-dom": "^6.22.3",
     "react-scripts": "5.0.1",
+    "react-select": "^5.8.0",
     "web-vitals": "^2.1.4"
   },
   "scripts": {

@@ -6,11 +6,10 @@ import Login from './pages/userAuth/Login';
 import Register from './pages/userAuth/Register';
 import Error from './pages/Error/Error';
 import Teams from './pages/Teams/Teams';
-import Players from './pages/players/Players';
-import Sports from './pages/sports/Sports';
 import Doc from './pages/documentation/Doc';
 import About from './pages/abouts/About';
 import Profile from './pages/profile/Profile';
+import Map from './component/Map';
 
 function App() {
   return (
@@ -20,8 +19,7 @@ function App() {
           <Route path="/" element={<Navbar />}>
             <Route index element={<Home />} />
             <Route path='/teams' element={<Teams />}/>
-            <Route path='/players' element={<Players />}/>
-            <Route path='/Sports' element={<Sports />}/>
+            <Route path='/map' element={<Map />}/>
             <Route path='/documentation' element={<Doc />}/>
             <Route path='/about' element={<About />}/>
             <Route path='/profile' element={<Profile />}/>

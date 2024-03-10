@@ -8,16 +8,12 @@ import Footer from './Footer';
 
 const Links = [
     {
+        key: 'Map',
+        value : 'map'
+    },
+    {
         key: 'Teams',
         value : 'teams'
-    },
-    {
-        key: 'Players',
-        value : 'players'
-    },
-    {
-        key: 'Sports',
-        value : 'Sports'
     },
     {
         key: 'About',
@@ -64,7 +60,7 @@ const Navbar = () => {
 
     return (
         <>
-            <Box bg={useColorModeValue('#1F2937', '#1F2937')} px={4} borderBottom={'1px solid #FFFFFF'}>
+            <Box bg={useColorModeValue('#1F2937', '#1F2937')} px={4} borderBottom={'1px solid #FFFFFF'} position="fixed" width="100%" style={{zIndex:'100'}}>
                 <Flex h={16} alignItems={'center'} justifyContent={'space-between'}>
                     <IconButton
                         size={'md'}
@@ -74,9 +70,9 @@ const Navbar = () => {
                         onClick={isOpen ? onClose : onOpen}
                     />
                     <HStack spacing={8} alignItems={'center'}>
-                        <Box width={24}>
+                        <Box width={20}>
                             <Link to='/'>
-                                <Image src='https://i.imgur.com/YfLzsPH.png' alt='Logo' />
+                                <Image src='https://i.postimg.cc/ZKczgHKN/spots-logo-image-removebg-preview.png' alt='Logo' />
                             </Link>
                         </Box>
                         <HStack as={'nav'} spacing={4} display={{ base: 'none', md: 'flex' }}>
@@ -111,7 +107,9 @@ const Navbar = () => {
                                         />
                                     </MenuButton>
                                     <MenuList>
+                                    <Link to='/profile'>
                                         <MenuItem>Profile</MenuItem>
+                                    </Link>
                                         <MenuItem>Settings</MenuItem>
                                         <MenuDivider />
                                         <MenuItem onClick={handleLogout}>LogOut</MenuItem>
