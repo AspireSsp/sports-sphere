@@ -39,6 +39,15 @@ export const getUser = createAsyncThunk('getUser', async (requestData, { rejectW
   }
 });
 
+export const getAllUser = createAsyncThunk('getAllUser', async (requestData, { rejectWithValue }) => {
+  try {
+    const res = await get('user/get/all');
+    return res.data;
+  } catch (error) {
+    return rejectWithValue(error);
+  }
+});
+
 
 
 const authSlice = createSlice(
@@ -92,6 +101,12 @@ const authSlice = createSlice(
                 // console.log("Error->",action.payload);
             });
             builder.addCase(getUser.fulfilled, (state, action)=>{
+                state.isLoading = false;
+                state.isLogin = true;
+                state.user = action.payload.user;
+            });
+
+            builder.addCase(getAllUser.fulfilled, (state, action)=>{
                 state.isLoading = false;
                 state.isLogin = true;
                 state.user = action.payload.user;

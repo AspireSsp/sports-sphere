@@ -1,60 +1,13 @@
 import React, { useState } from "react";
 import { Button,Input,Modal,ModalBody,ModalOverlay,ModalCloseButton,ModalContent,ModalHeader } from "@chakra-ui/react";
 import { Checkbox } from "@chakra-ui/react";
+import EditModel from "../../component/EditModel";
 
 function ProfilePage() {
-  const [isOpen, setIsOpen] = useState(false);
-  // const [formData, setFormData] = useState({
-  //   userName: "Jane",
-  //   email: "Jane@gmail.com",
-  //   contactNo: "+11 998001001",
-  //   address: "Beech Creek, PA, Pennsylvania",
-  // });
-
-  const sports = ["cricket","hocky","football"]
-  const [formData, setFormData] = useState({
-    userName: "",
-    email: "",
-    contactNo: "",
-    address: "",
-    favoriteSports: [], // Initialize favoriteSports as an empty array
-  });
-  const handleInputChange = (e) => {
-    const { name, value } = e.target;
-    setFormData((prevData) => ({
-      ...prevData,
-      [name]: value,
-    }));
-  };
-
-  const handleCheckboxChange = (sport) => {
-    // Check if the sport is already in the formData.favoriteSports array
-    const isSportSelected = formData.favoriteSports.includes(sport);
   
-    // If the sport is selected, remove it from the array, otherwise add it
-    if (isSportSelected) {
-      setFormData({
-        ...formData,
-        favoriteSports: formData.favoriteSports.filter((selectedSport) => selectedSport !== sport),
-      });
-    } else {
-      setFormData({
-        ...formData,
-        favoriteSports: [...formData.favoriteSports, sport],
-      });
-    }
-  };
-  
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    // Save the updated profile data, you can implement the logic to save it to your backend here
-    console.log("Updated Profile Data:", formData);
-    // Close the edit form
-    setIsOpen(false);
-  };
   return (
-    <div className="container mx-auto my-5 p-5">
-      <div className="md:flex md:-mx-2">
+    <div className="container mx-auto p-5">
+      <div className="md:flex md:-mx-2 my-20">
         {/* Left Side */}
         <div className="w-full md:w-3/12 md:mx-2">
           {/* Profile Card */}
@@ -70,16 +23,6 @@ function ProfilePage() {
               <h1 className="text-gray-900 font-bold text-xl leading-8 my-1">
                 Jane Doe
               </h1>
-              <div class="mt-2 ml-2">
-                <Button
-                  colorScheme="black"
-                  variant="outline"
-                  size="sm"
-                  onClick={() => setIsOpen(true)}
-                >
-                  Edit
-                </Button>
-              </div>
             </div>
 
             <h3 className="text-gray-600 font-lg text-semibold leading-6">
@@ -109,78 +52,12 @@ function ProfilePage() {
           {/* End of profile card */}
         </div>
         {/* Right Side */}
+      
+
         <div className="w-full md:w-9/12 md:mx-2 mt-5 md:mt-0">
           {/* About Section */}
-          <div className="bg-white p-3 shadow-sm rounded-sm">
-            {/* Modal for editing profile */}
-            <Modal isOpen={isOpen} onClose={() => setIsOpen(false)}>
-              <ModalOverlay />
-              <ModalContent>
-                <ModalHeader>Edit Profile</ModalHeader>
-                <ModalCloseButton />
-                <ModalBody>
-                  <form onSubmit={handleSubmit}>
-                    <div className="grid md:grid-cols-2 text-sm">
-                      <div className="grid grid-cols-2">
-                        <div className="px-4 py-2 font-semibold">User Name</div>
-                        <Input
-                          name="userName"
-                          value={formData.userName}
-                          onChange={handleInputChange}
-                          className="px-4 py-2"
-                        />
-                      </div>
-                      <div className="grid grid-cols-2">
-                        <div className="px-4 py-2 font-semibold">Email</div>
-                        <Input
-                          name="email"
-                          value={formData.email}
-                          onChange={handleInputChange}
-                          className="px-4 py-2"
-                        />
-                      </div>
-                      <div className="grid grid-cols-2">
-                        <div className="px-4 py-2 font-semibold">Contact No.</div>
-                        <Input
-                          name="contactNo"
-                          value={formData.contactNo}
-                          onChange={handleInputChange}
-                          className="px-4 py-2"
-                        />
-                      </div>
-                      <div className="grid grid-cols-2">
-                        <div className="px-4 py-2 font-semibold">Address</div>
-                        <Input
-                          name="address"
-                          value={formData.address}
-                          onChange={handleInputChange}
-                          className="px-4 py-2"
-                        />
-                      </div>
-                      <div className="grid grid-cols-2">
-            <div className="px-4 py-2 font-semibold">Favorite Sports</div>
-            <div className="px-4 py-2">
-              {sports.map((sport, index) => (
-                <Checkbox
-                  key={index}
-                  name={sport}
-                  isChecked={formData.favoriteSports.includes(sport)}
-                  onChange={() => handleCheckboxChange(sport)}
-                >
-                  {sport}
-                </Checkbox>
-              ))}
-            </div>
-          </div>
-                    </div>
-                    <Button type="submit" colorScheme="black" variant="outline">
-                      Save
-                    </Button>
-                  </form>
-                </ModalBody>
-              </ModalContent>
-            </Modal>
-            {/* End of modal */}
+          <div className="flex justify-end">
+            <EditModel />
           </div>
           <div className="bg-white p-3 shadow-sm rounded-sm">
             <div className="flex items-center space-x-2 font-semibold text-gray-900 leading-8">

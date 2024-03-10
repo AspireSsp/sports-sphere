@@ -18,18 +18,6 @@ const Home = () => {
                 <div className="lg:col-span-2 p-4 bg-white" id="posted">
                     <div className="grid grid-cols-1 lg:grid-cols-3 gap-4">
                         <UserCard />
-                        <UserCard />
-                        <UserCard />
-                        <UserCard />
-                        <UserCard />
-                        <UserCard />
-                        <UserCard />
-                        <UserCard />
-                        <UserCard />
-                        <UserCard />
-                        <UserCard />
-                        <UserCard />
-                        <UserCard />
                     </div>
                 </div>
             </div>
