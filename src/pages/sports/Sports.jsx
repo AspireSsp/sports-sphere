@@ -1,8 +1,11 @@
 import React from 'react'
+import Map from '../../component/Map'
 
 const Sports = () => {
   return (
-    <div>Sports</div>
+    <div>
+      <Map />
+    </div>
   )
 }
 
